@@ -5,10 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Le Blog-</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="stylesheet.css">
 </head>
-<body class="flex justify-between p-10">
-    <h1 class="bg-blue-300">Hello Tailwind</h1>
-    <p class="decoration-orange-300">test</p>
-    <a href="ext_content/profile.html">redirection</a>
+<body class="flex justify-between flex-col">
+
+    <header class="flex justify-between">
+        <div class="r-content flex gap-5 justify-center items-center">
+            <div class="logo w-5 h-5 bg-slate-950 rounded-full"></div>
+            <ul class="flex gap-5 text-white">
+                <li>Articles</li>
+                <li>A propos</li>
+                <li>Contact</li>
+            </ul>
+        </div>
+        <div class="l-content flex gap-5">
+            <input type="text" class="search-bar rounded-lg bg-slate-950">
+            <div class="profile"></div>
+        </div>
+    </header>
+
+    <main class="flex flex-row justify-between">
+        <div class="side-menu bg-slate-50">
+
+        </div>
+        <div class="articles flex flex-wrap">
+            <div class="article" ></div>
+        </div>
+        <div class="profile-infos bg-slate-50">
+
+        </div>
+    </main>
+    <!-- <a href="ext_content/profile.html">redirection</a> -->
 </body>
 </html>
