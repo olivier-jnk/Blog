@@ -1,13 +1,229 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="dist/style.css">
-</head>
-<body>
-    <p class="font-bold">salut</p>
-    <a href="pages/ext_content/joe.html">Hey Joe</a>
-</body>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Silver Screen - Blog sur le cinéma</title>
+    <!-- Lien CDN pour Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    
+  </head>
+  <body class="m-0 p-0s flex flex-col gap-10 items-center">
+    <header class="flex bg-[#BED7DC] justify-between p-5 w-full items-center">
+        <div class="l-part flex gap-10 items-center">
+            <p class="text-white font-bold">Silver Screen</p>
+            <!-- Menu classique sur version pc -->
+            <ul class="hidden gap-5 text-white md:flex">
+                <li>Articles</li>
+                <li><a href="./pages/ext_content/article.html">A propos</a></li>
+                <li><a>Contact</a></li>
+            </ul>
+            <div class="menu-burger flex md:hidden rounded-full w-4 h-4 bg-[#F1EEDC]"></div>
+        </div>
+        <div class="r-part flex gap-10">
+            <!-- Menu burger sur version téléphone. -->
+            <div class="profile bg-[#F1EEDC] rounded-full w-4 h-4"></div>
+        </div>
+    </header>
+
+    <main class="flex flex-col justify-center items-center mt-10 gap-5 w-4/5">
+        <div class="main-content flex flex-col min-w-3/4 gap-2">
+            <div class="txt">
+                <p class="font-bold text-base sm:text-lg md:text-2xl lg:text-4xl">L'énigme du Cinéma: A la recherche des Origines Perdues</p>
+                <!-- Faire des tailles prédéfinies pour différentes tailles (txt, images, icons) en responsive. Comme ci dessus, mais pouvant
+                s'appliquer à plusieurs elements sans trop de répétition. -> Voir fonction SCSS ? -->
+                <div class="und-content flex gap-5">
+                    <p>Emily Devereux</p>
+                    <p>31 mars 2024</p>
+                </div>
+            </div>
+            <img src="./content/img/charles-chaplin-3521070_1280.jpg" alt="Image de couverture de l'article">
+            <div class="stats flex gap-2 items-center">
+                <p>121</p>
+                <img class="icon w-4 h-4" src="./content/icons/Comment.png" alt="icone de commentaire">
+            </div>
+        </div>
+        <section class="lasts-articles flex flex-col w-full">
+            <h2>Derniers Articles</h2>
+            <div class="content flex gap-10 justify-between">
+                <!-- 1er = derniere version. -->
+                <div class="articles flex flex-col gap-5 w-2/3">
+                    <div class="article flex bg-[#BED7DC] p-5 justify-between gap-10">
+                        <div class="content flex flex-col">
+                            <p class="font-bold">L'énigme du Cinéma: A la recherche des Origines Perdues</p>
+                            <div class="und-content flex gap-5">
+                                <p>Emily Devereux</p>
+                                <p>31 mars 2024</p>
+                            </div>
+                            <div class="stats flex gap-2 items-center">
+                                <p>121</p>
+                                <img class="icon w-4 h-4" src="./content/icons/Comment.png" alt="icone de commentaire">
+                            </div>
+                        </div>
+                        <img class="w-20 h-20" src="./content/img/charles-chaplin-3521070_1280.jpg" alt="image de couverture de l'article">
+                    </div>
+                    <div class="article flex bg-[#BED7DC] p-5 justify-between gap-10">
+                        <div class="content flex flex-col">
+                            <p class="font-bold">L'énigme du Cinéma: A la recherche des Origines Perdues</p>
+                            <div class="und-content flex gap-5">
+                                <p>Emily Devereux</p>
+                                <p>31 mars 2024</p>
+                            </div>
+                            <div class="stats flex gap-2 items-center">
+                                <p>121</p>
+                                <img class="icon w-4 h-4" src="./content/icons/Comment.png" alt="icone de commentaire">
+                            </div>
+                        </div>
+                        <img class="w-20 h-20" src="./content/img/charles-chaplin-3521070_1280.jpg" alt="image de couverture de l'article">
+                    </div>
+                    <div class="article flex bg-[#BED7DC] p-5 justify-between gap-10">
+                        <div class="content flex flex-col">
+                            <p class="font-bold">L'énigme du Cinéma: A la recherche des Origines Perdues</p>
+                            <div class="und-content flex gap-5">
+                                <p>Emily Devereux</p>
+                                <p>31 mars 2024</p>
+                            </div>
+                            <div class="stats flex gap-2 items-center">
+                                <p>121</p>
+                                <img class="icon w-4 h-4" src="./content/icons/Comment.png" alt="icone de commentaire">
+                            </div>
+                        </div>
+                        <img class="w-20 h-20" src="./content/img/charles-chaplin-3521070_1280.jpg" alt="image de couverture de l'article">
+                    </div>
+                </div>
+                <div class="side-content bg-[#B3C8CF] p-5 w-1/3 flex justify-center items-center">
+                    <table class="bg-[#B3C8CF] p-5 w-2/3">
+                        <tr>
+                          <th>Prénom</th>
+                          <th>Nom</th>
+                          <th>Âge</th>
+                        </tr>
+                        <tr>
+                          <td>John</td>
+                          <td>Doe</td>
+                          <td>30</td>
+                        </tr>
+                        <tr>
+                          <td>Jane</td>
+                          <td>Smith</td>
+                          <td>25</td>
+                        </tr>
+                        <tr>
+                          <td>Bob</td>
+                          <td>Jones</td>
+                          <td>40</td>
+                        </tr>
+                    </table>  
+                </div>         
+            </div>
+        </section>
+        <section class="lasts-articles flex flex-col w-full">
+            <h2 class="flex flex-end">Les plus aimés</h2>
+            <div class="content flex flex-row-reverse gap-10">
+                <div class="articles flex flex-col gap-5 w-2/3">
+                    <div class="article flex bg-[#BED7DC] p-5 justify-between gap-10">
+                        <div class="content flex flex-col">
+                            <p class="font-bold">L'énigme du Cinéma: A la recherche des Origines Perdues</p>
+                            <div class="und-content flex gap-5">
+                                <p>Emily Devereux</p>
+                                <p>31 mars 2024</p>
+                            </div>
+                            <div class="stats flex gap-2 items-center">
+                                <p>121</p>
+                                <img class="icon w-4 h-4" src="./content/icons/Comment.png" alt="icone de commentaire">
+                            </div>
+                        </div>
+                        <img class="w-20 h-20" src="./content/img/charles-chaplin-3521070_1280.jpg" alt="image de couverture de l'article">
+                    </div>
+                    <div class="article flex bg-[#BED7DC] p-5 justify-between gap-10">
+                        <div class="content flex flex-col">
+                            <p class="font-bold">L'énigme du Cinéma: A la recherche des Origines Perdues</p>
+                            <div class="und-content flex gap-5">
+                                <p>Emily Devereux</p>
+                                <p>31 mars 2024</p>
+                            </div>
+                            <div class="stats flex gap-2 items-center">
+                                <p>121</p>
+                                <img class="icon w-4 h-4" src="./content/icons/Comment.png" alt="icone de commentaire">
+                            </div>
+                        </div>
+                        <img class="w-20 h-20" src="./content/img/charles-chaplin-3521070_1280.jpg" alt="image de couverture de l'article">
+                    </div>
+                    <div class="article flex bg-[#BED7DC] p-5 justify-between gap-10">
+                        <div class="content flex flex-col">
+                            <p class="font-bold">L'énigme du Cinéma: A la recherche des Origines Perdues</p>
+                            <div class="und-content flex gap-5">
+                                <p>Emily Devereux</p>
+                                <p>31 mars 2024</p>
+                            </div>
+                            <div class="stats flex gap-2 items-center">
+                                <p>121</p>
+                                <img class="icon w-4 h-4" src="./content/icons/Comment.png" alt="icone de commentaire">
+                            </div>
+                        </div>
+                        <img class="w-20 h-20" src="./content/img/charles-chaplin-3521070_1280.jpg" alt="image de couverture de l'article">
+                    </div>
+                </div>
+                <div class="side-content bg-[#B3C8CF] p-5 w-1/3">
+                    <table>
+                        <tr>
+                          <th>Prénom</th>
+                          <th>Nom</th>
+                          <th>Âge</th>
+                        </tr>
+                        <tr>
+                          <td>John</td>
+                          <td>Doe</td>
+                          <td>30</td>
+                        </tr>
+                        <tr>
+                          <td>Jane</td>
+                          <td>Smith</td>
+                          <td>25</td>
+                        </tr>
+                        <tr>
+                          <td>Bob</td>
+                          <td>Jones</td>
+                          <td>40</td>
+                        </tr>
+                    </table>    
+                </div>              
+            </div>
+        </section>
+    </main>
+
+    <footer class="flex flex-col bg-[#B3C8CF] p-10 text-white w-full">
+        <div class="infos flex  items-center gap-10">
+            <p class="logo font-bold">Silver Screen</p>
+            <div class="navigation flex flex-row justify-between">
+                <ul>
+                    <li>A propos</li>
+                    <li>Contact</li>
+                    <li>Contact</li>
+                </ul>
+                <ul>
+                    <li>Mentions légales</li>
+                    <li>Politique de confidentialité</li>
+                    <li>Conditions d'utilisation</li>
+                </ul>
+                <ul class="flex">
+                    <img src="" alt="x">
+                    <img src="" alt="facebook">
+                    <img src="" alt="instagram">
+                </ul>
+            </div>
+        </div>
+        <p>© 2024 Silverscreen</p>
+    </footer>
+    
+  </body>
 </html>
+
+<!-- sm	640px	@media (min-width: 640px) { ... }
+md	768px	@media (min-width: 768px) { ... }
+lg	1024px	@media (min-width: 1024px) { ... }
+xl	1280px	@media (min-width: 1280px) { ... }
+2xl	1536px	@media (min-width: 1536px) { ... } -->
+
+<!-- <img class="w-16 md:w-32 lg:w-48" src="..."> -->
