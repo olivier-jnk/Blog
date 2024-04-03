@@ -1,0 +1,27 @@
+.line {
+  width: 100%;
+  height: 1px;
+  background-color: black;
+}
+
+.has-submenu .submenu {
+  display: none;
+  position: absolute;
+  background-color: #222526;
+}
+.has-submenu .submenu li {
+  margin: 0;
+}
+.has-submenu .submenu a {
+  display: block;
+  padding: 10px;
+  color: #fff;
+  text-decoration: none;
+}
+.has-submenu .submenu a :hover {
+  background-color: #555;
+}
+
+.has-submenu:hover .submenu {
+  display: block;
+}/*# sourceMappingURL=style.css.map */
