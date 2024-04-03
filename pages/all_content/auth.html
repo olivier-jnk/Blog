@@ -3,52 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>L'énigme du Cinéma: A la recherche des Origines Perdues</title>
+    <title>Page de connexion</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="../style.css">
 </head>
 <body class="m-0 p-0s flex flex-col gap-5 items-center">
     <header class="flex bg-[#BED7DC] justify-between p-5 w-full items-center">
         <div class="l-part flex gap-10 items-center">
-            <p class="text-white font-bold"><a href="../../index.html">Silver Screen</a></p>
-            <!-- Menu classique sur version pc -->
-            <ul class="hidden gap-5 text-white md:flex">
-                <li>Articles</li>
-                <li><a href="./pages/ext_content/article.html">A propos</a></li>
-                <li><a>Contact</a></li>
-            </ul>
-            <div class="menu-burger flex md:hidden rounded-full w-4 h-4 bg-[#F1EEDC]"></div>
-        </div>
-        <div class="r-part flex gap-10">
-            <!-- Menu burger sur version téléphone. -->
-            <div class="profile bg-[#F1EEDC] rounded-full w-4 h-4"></div>
-        </div>
+            <p class="logo text-white font-bold"><a href="../../index.html">Silver Screen</a></p>
     </header>
 
-    <main class="flex flex-col justify-center items-center mt-10 gap-5 w-4/5 sm:w-4/6 lg:3/6"></main>
-
-    <footer class="flex flex-col bg-[#B3C8CF] p-10 text-white w-full">
-        <div class="infos flex  items-center gap-10">
-            <p class="logo font-bold">Silver Screen</p>
-            <div class="navigation flex flex-row justify-between">
-                <ul>
-                    <li>A propos</li>
-                    <li>Contact</li>
-                    <li>Contact</li>
-                </ul>
-                <ul>
-                    <li>Mentions légales</li>
-                    <li>Politique de confidentialité</li>
-                    <li>Conditions d'utilisation</li>
-                </ul>
-                <ul class="flex">
-                    <img src="" alt="x">
-                    <img src="" alt="facebook">
-                    <img src="" alt="instagram">
-                </ul>
+    <main class="flex flex-col justify-center items-center mt-10 gap-5 w-4/5 sm:w-4/6 lg:3/6">
+        <div class="max-w-md mx-auto bg-white rounded-lg overflow-hidden shadow-md flex flex-col gap-5">
+            <div class="px-6 py-4">
+                <h2 class="text-2xl font-semibold mb-2">Connexion</h2>
+                <form action="../../index.html" method="POST">
+                    <div class="mb-4">
+                        <label for="name" class="block text-gray-700 font-medium">adresse e-mail</label>
+                        <input type="text" id="name" name="name" class="mt-1 px-4 py-2 w-full border-b border-gray-300 focus:outline-none focus:border-blue-500" required>
+                    </div>
+                    <div class="mb-6">
+                        <label for="name" class="block text-gray-700 font-medium">mot de passe</label>
+                        <input type="text" id="name" name="name" class="mt-1 px-4 py-2 w-full border-b border-gray-300 focus:outline-none focus:border-blue-500" required>
+                    </div>
+                    <div class="flex justify-end">
+                        <a class="bg-[#BED7DC] text-white px-4 py-2 rounded-md hover:hover:bg-[#B3C8CF]" href="profil.html">Se connecter</a>
+                    </div>
+                </form>
             </div>
         </div>
-        <p>© 2024 Silverscreen</p>
-    </footer>
+    </main>
 </body>
 </html>
