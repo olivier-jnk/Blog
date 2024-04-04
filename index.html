@@ -1,37 +1,28 @@
 <!DOCTYPE html>
 <html lang="fr">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Silver Screen - Blog sur le cinéma</title>
     <!-- Lien CDN pour Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="./pages/style.css">
   </head>
   <body class="m-0 p-0s flex flex-col gap-10 items-center">
-    <div id="cookie-banner" class="cookie-banner fixed bottom-0 left-0 w-full bg-[#000000] text-white p-4 flex items-center justify-between transition-all duration-500 ease-in-out opacity-100 transform translate-y-0">
-        <p class="text-center">Nous utilisons des cookies pour améliorer votre expérience utilisateur. En continuant à utiliser ce site, vous acceptez notre utilisation des cookies.</p>
-        <div class="mt-2 flex justify-center gap-5">
-            <button id="accept-cookies" class="bg-[#A7E8BD] text-gray-950 px-4 py-2 rounded-md" onclick="depopCookies()">Accepter</button>
-            <button id="reject-cookies" class="bg-[#60695C] text-gray-950 px-4 py-2 rounded-md" onclick="depopCookies()">Refuser</button>
-        </div>
-    </div>
-
     <header class="flex bg-[#BED7DC] justify-between p-5 w-full items-center">
         <div class="l-part flex gap-10 items-center max-[899px]:gap-5">
             <p class="logo text-white font-bold"><a href="index.html">Silver Screen</a></p>
-            <!-- Menu classique sur version pc -->
             <ul class="menu gap-5 text-white hidden min-[900px]:flex">
                 <li class="has-submenu ">
                     <a href="">Articles</a>
                     <ul class="submenu gap-2 p-2">
-                        <li><a href="#">Tous les articles</a></li>
-                        <li><a href="#">Les plus populaires</a></li>
-                        <li><a href="#">Les plus récents</a></li>
-                        <li><a href="./pages/all_content/article-creation/article-creation.html">Créer un article</a></li>
+                        <li><a href="#" class="underline-animation">Tous les articles</a></li>
+                        <li><a href="#" class="underline-animation">Les plus populaires</a></li>
+                        <li><a href="#" class="underline-animation">Les plus récents</a></li>
+                        <li><a href="./pages/all_content/article-creation/article-creation.html" class="underline-animation">Créer un article</a></li>
                     </ul>
                 </li>
-                <li><a href="./pages/all_content/article.html" class="underline-animation">A propos</a></li>
+                <li><a href="#" class="underline-animation">A propos</a></li>
                 <li><a href="./pages/all_content/contact.html" class="underline-animation">Contact</a></li>
             </ul>
             <img class="w-5 h-5 hidden max-[899px]:flex" src="./content/icons/sort.webp" alt="">
@@ -46,10 +37,18 @@
         </div>
     </header>
 
+    <div id="cookie-banner" class="cookie-banner fixed bottom-0 left-0 w-full bg-[#000000] text-white p-4 flex items-center justify-between transition-all duration-500 ease-in-out opacity-100 transform translate-y-0">
+        <p class="text-center">Nous utilisons des cookies pour améliorer votre expérience utilisateur. En continuant à utiliser ce site, vous acceptez notre utilisation des cookies.</p>
+        <div class="mt-2 flex justify-center gap-5">
+            <button id="accept-cookies" class="bg-[#A7E8BD] text-gray-950 px-4 py-2 rounded-md" onclick="depopCookies()">Accepter</button>
+            <button id="reject-cookies" class="bg-slate-200 text-gray-950 px-4 py-2 rounded-md" onclick="depopCookies()">Refuser</button>
+        </div>
+    </div>
+
     <main class="flex flex-col justify-center items-center gap-5 w-4/5 md:mt-10">
         <div class="main-content flex flex-col min-w-3/4 gap-2">
             <div class="txt">
-                <p class="font-bold text-base sm:text-lg md:text-2xl lg:text-4xl">L'énigme du Cinéma: A la recherche des Origines Perdues</p>
+                <h1 class="font-bold text-base sm:text-lg md:text-2xl lg:text-4xl">L'énigme du Cinéma: A la recherche des Origines Perdues</h1>
                 <div class="und-content flex gap-5">
                     <p class="text-xs md:text-base xl:text-lg 2xl:text-xl">Emily Devereux</p>
                     <p class="text-xs md:text-base xl:text-lg 2xl:text-xl">31 mars 2024</p>
@@ -73,17 +72,17 @@
                                 <p class="text-xs md:text-base xl:text-lg">15 mars 2024</p>
                             </div>
                             <div class="stats flex gap-2 items-center">
-                                <p class="text-xs md:text-base xl:text-lg">121</p>
+                                <!-- !! span !! -->
+                                <span class="text-xs md:text-base xl:text-lg">121</span>
                                 <img class="icon w-4 h-4" src="./content/icons/comment.webp" alt="icone de commentaire">
                             </div>
                         </div>
                         <img class="w-20 h-20" src="./content/img/charles-chaplin-3521070_1280.jpg" alt="image de couverture de l'article">
-                        <!-- <div class="bg-img p-6 custom-background w-20 h-20"></div> -->
-                        <!-- <div class="container mx-auto"></div> -->
                     </div>
                     <div class="article flex bg-[#BED7DC] mt-5 p-5 justify-between gap-10">
                         <div class="content flex flex-col gap-2">
-                            <p class="font-bold text-xs md:text-base xl:text-lg">Analyse de la montée en puissance du genre du thriller psychologique dans le cinéma moderne</p>
+                            <!-- !! Titre !! -->
+                            <h2 class="font-bold text-xs md:text-base xl:text-lg">Analyse de la montée en puissance du genre du thriller psychologique dans le cinéma moderne</h2>
                             <div class="und-content flex gap-5">
                                 <p class="text-xs md:text-base xl:text-lg">Thomas Dubois</p>
                                 <p class="text-xs md:text-base xl:text-lg">5 mars 2024</p>
@@ -111,36 +110,39 @@
                     </div>
                 </div>
                 <div class="side-content bg-gray-300 p-5 md:col-span-1">
-                    <!-- Tableau de données. -->
-                    <table class="p-5">
-                        <tr>
-                            <th>Prénom</th>
-                            <th>Nom</th>
-                            <th>Âge</th>
-                        </tr>
-                        <tr>
-                            <td>John</td>
-                            <td>Doe</td>
-                            <td>30</td>
-                        </tr>
-                        <tr>
-                            <td>Jane</td>
-                            <td>Smith</td>
-                            <td>25</td>
-                        </tr>
-                        <tr>
-                            <td>Bob</td>
-                            <td>Jones</td>
-                            <td>40</td>
-                        </tr>
-                    </table>
+                    <div class="side-content bg-gray-300 p-5 md:col-span-1 flex flex-col gap-5">
+                        <img src="./content/img/pexels-tima-miroshnichenko-7991319.jpg" alt="">
+                        <div class="txt flex flex-col gap-2 ">
+                            <p class="font-bold md:text-base xl:text-lg">Voyage à travers le temps : un regard rétrospectif sur les classiques du cinéma des années 80</p>
+                            <div class="und-content flex gap-5">
+                                <p class="text-xs md:text-base xl:text-lg">Julien Lefebvre</p>
+                                <p class="text-xs md:text-base xl:text-lg">20 mai 2021</p>
+                            </div>
+                            <div class="stats flex gap-2 items-center">
+                                <p class="text-xs md:text-base xl:text-lg">210</p>
+                                <img class="icon w-4 h-4" src="./content/icons/comment.webp" alt="icone de commentaire">
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
         <section class="top-articles flex flex-col w-full gap-2">
             <h2 class="font-bold text-lg md:text-xl lg:text-2xl">Articles populaires</h2>
             <div class="content grid grid-cols-1 md:grid-cols-3 gap-10">
-                <div class="side-content bg-gray-300 p-5 md:col-span-1">
+                <div class="side-content bg-gray-300 p-5 md:col-span-1 flex flex-col gap-5">
+                    <img src="./content/img/pexels-tima-miroshnichenko-7991319.jpg" alt="">
+                    <div class="txt flex flex-col gap-2 ">
+                        <p class="font-bold md:text-base xl:text-lg">Voyage à travers le temps : un regard rétrospectif sur les classiques du cinéma des années 80</p>
+                        <div class="und-content flex gap-5">
+                            <p class="text-xs md:text-base xl:text-lg">Julien Lefebvre</p>
+                            <p class="text-xs md:text-base xl:text-lg">20 mai 2021</p>
+                        </div>
+                        <div class="stats flex gap-2 items-center">
+                            <p class="text-xs md:text-base xl:text-lg">210</p>
+                            <img class="icon w-4 h-4" src="./content/icons/comment.webp" alt="icone de commentaire">
+                        </div>
+                    </div>
                 </div>
                 <div class="articles md:col-span-2 gap-5">
                     <div class="article flex bg-[#BED7DC] mb-5 p-5 justify-between gap-10 gap-2">
@@ -148,7 +150,7 @@
                             <p class="font-bold text-xs md:text-base xl:text-lg">Révélation de l'Univers de Blade Runner 2049 : Une Odyssée Cinématographique</p>
                             <div class="und-content flex gap-5">
                                 <p class="text-xs md:text-base xl:text-lg">Julien Lefebvre</p>
-                                <p class="text-xs md:text-base xl:text-lg"> Date: 20 mai 2021</p>
+                                <p class="text-xs md:text-base xl:text-lg">20 mai 2021</p>
                             </div>
                             <div class="stats flex gap-2 items-center">
                                 <p class="text-xs md:text-base xl:text-lg">210</p>
@@ -162,7 +164,7 @@
                             <p class="font-bold text-xs md:text-base xl:text-lg">Révélation de l'Univers de Blade Runner 2049 : Une Odyssée Cinématographique</p>
                             <div class="und-content flex gap-5">
                                 <p class="text-xs md:text-base xl:text-lg">Julien Lefebvre</p>
-                                <p class="text-xs md:text-base xl:text-lg"> Date: 20 mai 2021</p>
+                                <p class="text-xs md:text-base xl:text-lg">20 mai 2021</p>
                             </div>
                             <div class="stats flex gap-2 items-center">
                                 <p class="text-xs md:text-base xl:text-lg">210</p>
@@ -186,7 +188,6 @@
                         <img class="w-20 h-20" src="./content/img/joel-filipe-QwoNAhbmLLo-unsplash.jpg" alt="image de couverture de l'article">
                     </div>
                 </div>
-                
             </div>
         </section>
     </main>
@@ -206,15 +207,14 @@
                     <li>Conditions d'utilisation</li>
                 </ul>
                 <ul class="flex">
-                    <img class="w-6 h-6" src="content/icons/x_twitter-logo.webp" alt="x">
-                    <img class="w-6 h-6" src="content/icons/facebook-logo.webp" alt="facebook">
-                    <img class="w-8 h-6" src="content/icons/instagram-logo.webp" alt="instagram">
+                    <li><img class="w-6 h-6" src="content/icons/x_twitter-logo.webp" alt="x"></li>
+                    <li><img class="w-6 h-6" src="content/icons/facebook-logo.webp" alt="facebook"></li>
+                    <li><img class="w-8 h-6" src="content/icons/instagram-logo.webp" alt="instagram"></li>
                 </ul>
             </div>
         </div>
         <p>© 2024 Silverscreen</p>
     </footer>
-
     <script src="./main.js"></script>
   </body>
 </html>
