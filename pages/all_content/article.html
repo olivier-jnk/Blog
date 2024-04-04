@@ -9,19 +9,30 @@
 </head>
 <body class="m-0 p-0s flex flex-col gap-5 items-center w-full">
     <header class="flex bg-[#BED7DC] justify-between p-5 w-full items-center">
-        <div class="l-part flex gap-10 items-center">
-            <p class="text-white font-bold"><a href="../../index.html">Silver Screen</a></p>
-            <!-- Menu classique sur version pc -->
-            <ul class="hidden gap-5 text-white md:flex">
-                <li>Articles</li>
-                <li><a href="./pages/ext_content/article.html">A propos</a></li>
-                <li><a>Contact</a></li>
+        <div class="l-part flex gap-10 items-center max-[899px]:gap-5">
+            <p class="logo text-white font-bold"><a href="index.html">Silver Screen</a></p>
+            <ul class="menu gap-5 text-white hidden min-[900px]:flex">
+                <li class="has-submenu ">
+                    <a href="">Articles</a>
+                    <ul class="submenu gap-2 p-2">
+                        <li><a href="#">Tous les articles</a></li>
+                        <li><a href="#">Les plus populaires</a></li>
+                        <li><a href="#">Les plus récents</a></li>
+                        <li><a href="./article-creation/article-creation.html">Créer un article</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">A propos</a></li>
+                <li><a href="./contact.html">Contact</a></li>
             </ul>
-            <div class="menu-burger flex md:hidden rounded-full w-4 h-4 bg-[#F1EEDC]"></div>
+            <img class="w-5 h-5 hidden max-[899px]:flex" src="./content/icons/sort.webp" alt="">
         </div>
-        <div class="r-part flex gap-10">
-            <!-- Menu burger sur version téléphone. -->
-            <div class="profile bg-[#F1EEDC] rounded-full w-4 h-4"></div>
+        <div class="r-part flex gap-10 items-center">
+            <div class="flex justify-center max-[899px]:hidden">
+                <div class="relative">
+                    <input type="text" class="border border-gray-300 rounded-md py-2 px-4 block w-64" placeholder="Rechercher...">
+                </div>
+            </div>
+            <a href="./auth.html"><div class="profile bg-[#F1EEDC] rounded-full w-6 h-6"></div></a>
         </div>
     </header>
 
@@ -34,7 +45,6 @@
                         <img class="w-6 h-6" src="../../content/icons/x_twitter-logo.webp" alt="x">
                         <img class="w-6 h-6" src="../../content/icons/facebook-logo.webp" alt="facebook">
                         <img class="w-8 h-6" src="../../content/icons/instagram-logo.webp" alt="instagram">
-                        <!-- Automatiser ca aussi ? (tout ce qui peut l'être !)) -->
                     </ul>
                 </div>
                 <div class="und-content flex gap-5">

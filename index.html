@@ -7,227 +7,186 @@
     <!-- Lien CDN pour Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="./pages/style.css">
-    <!-- Component(s) avec scss pour header/footer, et/ou fonction. -->
-    
   </head>
   <body class="m-0 p-0s flex flex-col gap-10 items-center">
+    <div id="cookie-banner" class="cookie-banner fixed bottom-0 left-0 w-full bg-[#000000] text-white p-4 flex items-center justify-between transition-all duration-500 ease-in-out opacity-100 transform translate-y-0">
+        <p class="text-center">Nous utilisons des cookies pour améliorer votre expérience utilisateur. En continuant à utiliser ce site, vous acceptez notre utilisation des cookies.</p>
+        <div class="mt-2 flex justify-center gap-5">
+            <button id="accept-cookies" class="bg-[#A7E8BD] text-gray-950 px-4 py-2 rounded-md" onclick="depopCookies()">Accepter</button>
+            <button id="reject-cookies" class="bg-[#60695C] text-gray-950 px-4 py-2 rounded-md" onclick="depopCookies()">Refuser</button>
+        </div>
+    </div>
+
     <header class="flex bg-[#BED7DC] justify-between p-5 w-full items-center">
-        <div class="l-part flex gap-10 items-center">
+        <div class="l-part flex gap-10 items-center max-[899px]:gap-5">
             <p class="logo text-white font-bold"><a href="index.html">Silver Screen</a></p>
             <!-- Menu classique sur version pc -->
-            <ul class="hidden gap-5 text-white md:flex">
-                <li class="has-submenu">
+            <ul class="menu gap-5 text-white hidden min-[900px]:flex">
+                <li class="has-submenu ">
                     <a href="">Articles</a>
                     <ul class="submenu gap-2 p-2">
                         <li><a href="#">Tous les articles</a></li>
                         <li><a href="#">Les plus populaires</a></li>
                         <li><a href="#">Les plus récents</a></li>
+                        <li><a href="./pages/all_content/article-creation/article-creation.html">Créer un article</a></li>
                     </ul>
                 </li>
-                <li><a href="./pages/all_content/article.html">A propos</a></li>
-                <li><a href="./pages/all_content/contact.htmls">Contact</a></li>
+                <li><a href="./pages/all_content/article.html" class="underline-animation">A propos</a></li>
+                <li><a href="./pages/all_content/contact.html" class="underline-animation">Contact</a></li>
             </ul>
-            <div class="menu-burger flex md:hidden rounded-full w-4 h-4 bg-[#F1EEDC]"></div>
+            <img class="w-5 h-5 hidden max-[899px]:flex" src="./content/icons/sort.webp" alt="">
         </div>
-        <div class="r-part flex gap-10">
-            <!-- Menu burger sur version téléphone. -->
-            <a href="./pages/all_content/auth.html"><div class="profile bg-[#F1EEDC] rounded-full w-4 h-4"></div></a>
+        <div class="r-part flex gap-10 items-center">
+            <div class="flex justify-center max-[899px]:hidden">
+                <div class="relative">
+                    <input type="text" class="border border-gray-300 rounded-md py-2 px-4 block w-64" placeholder="Rechercher...">
+                </div>
+            </div>
+            <a href="./pages/all_content/auth.html"><div class="profile bg-[#F1EEDC] rounded-full w-6 h-6"></div></a>
         </div>
     </header>
 
-    <main class="flex flex-col justify-center items-center gap-5 w-4/5 mt-10">
+    <main class="flex flex-col justify-center items-center gap-5 w-4/5 md:mt-10">
         <div class="main-content flex flex-col min-w-3/4 gap-2">
             <div class="txt">
                 <p class="font-bold text-base sm:text-lg md:text-2xl lg:text-4xl">L'énigme du Cinéma: A la recherche des Origines Perdues</p>
-                <!-- Faire des tailles prédéfinies pour différentes tailles (txt, images, icons) en responsive. Comme ci dessus, mais pouvant
-                s'appliquer à plusieurs elements sans trop de répétition. -> Voir fonction SCSS ? -->
                 <div class="und-content flex gap-5">
-                    <p>Emily Devereux</p>
-                    <p>31 mars 2024</p>
+                    <p class="text-xs md:text-base xl:text-lg 2xl:text-xl">Emily Devereux</p>
+                    <p class="text-xs md:text-base xl:text-lg 2xl:text-xl">31 mars 2024</p>
                 </div>
             </div>
             <a href="./pages/all_content/article.html"><img src="./content/img/pexels-tima-miroshnichenko-7991319.jpg" alt="Image de couverture de l'article"></a>
             <div class="stats flex gap-2 items-center">
-                <p>121</p>
+                <p class="text-xs md:text-base xl:text-lg 2xl:text-xl">121</p>
                 <img class="icon w-4 h-4" src="./content/icons/comment.webp" alt="icone de commentaire">
             </div>
         </div>
-        <section class="lasts-articles flex flex-col w-full gap-2">
-            <h2 class="font-bold text-base sm:text-lg md:text-xl lg:text-2xl">Derniers Articles</h2>
-            <div class="content flex gap-10 justify-between">
-                <!-- 1er = derniere version. -->
-                <div class="articles flex flex-col gap-5 w-2/3">
-                    <div class="article flex bg-[#BED7DC] p-5 justify-between gap-10">
-                        <div class="content flex flex-col">
-                            <p class="font-bold">Les Liaisons Dangereuses : Décryptage de la Séduction dans le Chef-D'œuvre de Stephen Frears</p>
+        <section class="top-articles flex flex-col w-full gap-2">
+            <h2 class="font-bold text-lg md:text-xl lg:text-2xl">Articles récents</h2>
+            <div class="content grid grid-cols-1 md:grid-cols-3 gap-10">
+                <div class="articles md:col-span-2 gap-5">
+                    <div class="article flex bg-[#BED7DC] mb-5 p-5 justify-between gap-10">
+                        <div class="content flex flex-col gap-2">
+                            <p class="font-bold text-xs md:text-base xl:text-lg">Les Liaisons Dangereuses : Décryptage de la Séduction dans le Chef-D'œuvre de Stephen Frears</p>
                             <div class="und-content flex gap-5">
-                                <p>Sophie Martin</p>
-                                <p>15 mars 2024</p>
+                                <p class="text-xs md:text-base xl:text-lg">Sophie Martin</p>
+                                <p class="text-xs md:text-base xl:text-lg">15 mars 2024</p>
                             </div>
                             <div class="stats flex gap-2 items-center">
-                                <p>121</p>
+                                <p class="text-xs md:text-base xl:text-lg">121</p>
+                                <img class="icon w-4 h-4" src="./content/icons/comment.webp" alt="icone de commentaire">
+                            </div>
+                        </div>
+                        <img class="w-20 h-20" src="./content/img/charles-chaplin-3521070_1280.jpg" alt="image de couverture de l'article">
+                        <!-- <div class="bg-img p-6 custom-background w-20 h-20"></div> -->
+                        <!-- <div class="container mx-auto"></div> -->
+                    </div>
+                    <div class="article flex bg-[#BED7DC] mt-5 p-5 justify-between gap-10">
+                        <div class="content flex flex-col gap-2">
+                            <p class="font-bold text-xs md:text-base xl:text-lg">Analyse de la montée en puissance du genre du thriller psychologique dans le cinéma moderne</p>
+                            <div class="und-content flex gap-5">
+                                <p class="text-xs md:text-base xl:text-lg">Thomas Dubois</p>
+                                <p class="text-xs md:text-base xl:text-lg">5 mars 2024</p>
+                            </div>
+                            <div class="stats flex gap-2 items-center">
+                                <p class="text-xs md:text-base xl:text-lg">121</p>
                                 <img class="icon w-4 h-4" src="./content/icons/comment.webp" alt="icone de commentaire">
                             </div>
                         </div>
                         <img class="w-20 h-20" src="./content/img/charles-chaplin-3521070_1280.jpg" alt="image de couverture de l'article">
                     </div>
-                    <div class="article flex bg-[#BED7DC] p-5 justify-between gap-10">
-                        <div class="content flex flex-col">
-                            <p class="font-bold">Analyse de la montée en puissance du genre du thriller psychologique dans le cinéma moderne</p>
+                    <div class="article flex bg-[#BED7DC] mt-5 p-5 justify-between gap-10">
+                        <div class="content flex flex-col gap-2">
+                            <p class="font-bold text-xs md:text-base xl:text-lg">Voyage à travers le temps : un regard rétrospectif sur les classiques du cinéma des années 80</p>
                             <div class="und-content flex gap-5">
-                                <p>Thomas Dubois</p>
-                                <p>5 mars 2024</p>
+                                <p class="text-xs md:text-base xl:text-lg">Emily Devereux</p>
+                                <p class="text-xs md:text-base xl:text-lg">28 fevrier 2024</p>
                             </div>
                             <div class="stats flex gap-2 items-center">
-                                <p>121</p>
-                                <img class="icon w-4 h-4" src="./content/icons/comment.webp" alt="icone de commentaire">
-                            </div>
-                        </div>
-                        <img class="w-20 h-20" src="./content/img/charles-chaplin-3521070_1280.jpg" alt="image de couverture de l'article">
-                    </div>
-                    <div class="article flex bg-[#BED7DC] p-5 justify-between gap-10">
-                        <div class="content flex flex-col">
-                            <p class="font-bold">Voyage à travers le temps : un regard rétrospectif sur les classiques du cinéma des années 80</p>
-                            <div class="und-content flex gap-5">
-                                <p>Emily Devereux</p>
-                                <p>28 fevrier 2024</p>
-                            </div>
-                            <div class="stats flex gap-2 items-center">
-                                <p>121</p>
+                                <p class="text-xs md:text-base xl:text-lg">121</p>
                                 <img class="icon w-4 h-4" src="./content/icons/comment.webp" alt="icone de commentaire">
                             </div>
                         </div>
                         <img class="w-20 h-20" src="./content/img/charles-chaplin-3521070_1280.jpg" alt="image de couverture de l'article">
                     </div>
                 </div>
-                <div class="side-content bg-[#B3C8CF] p-5 w-1/3 flex justify-center items-center">
-                    <table class="bg-[#B3C8CF] p-5 w-2/3">
+                <div class="side-content bg-gray-300 p-5 md:col-span-1">
+                    <!-- Tableau de données. -->
+                    <table class="p-5">
                         <tr>
-                          <th>Prénom</th>
-                          <th>Nom</th>
-                          <th>Âge</th>
+                            <th>Prénom</th>
+                            <th>Nom</th>
+                            <th>Âge</th>
                         </tr>
                         <tr>
-                          <td>John</td>
-                          <td>Doe</td>
-                          <td>30</td>
+                            <td>John</td>
+                            <td>Doe</td>
+                            <td>30</td>
                         </tr>
                         <tr>
-                          <td>Jane</td>
-                          <td>Smith</td>
-                          <td>25</td>
+                            <td>Jane</td>
+                            <td>Smith</td>
+                            <td>25</td>
                         </tr>
                         <tr>
-                          <td>Bob</td>
-                          <td>Jones</td>
-                          <td>40</td>
+                            <td>Bob</td>
+                            <td>Jones</td>
+                            <td>40</td>
                         </tr>
-                    </table>  
-                </div>         
+                    </table>
+                </div>
             </div>
         </section>
         <section class="top-articles flex flex-col w-full gap-2">
-            <h2 class="font-bold text-base sm:text-lg md:text-xl lg:text-2xl">Les plus aimés</h2>
-            <div class="content flex flex-row-reverse gap-10">
-                <div class="articles flex flex-col gap-5 w-2/3">
-                    <div class="article flex p-5 justify-between gap-10">
+            <h2 class="font-bold text-lg md:text-xl lg:text-2xl">Articles populaires</h2>
+            <div class="content grid grid-cols-1 md:grid-cols-3 gap-10">
+                <div class="side-content bg-gray-300 p-5 md:col-span-1">
+                </div>
+                <div class="articles md:col-span-2 gap-5">
+                    <div class="article flex bg-[#BED7DC] mb-5 p-5 justify-between gap-10 gap-2">
                         <div class="content flex flex-col">
-                            <p class="font-bold">Les 10 films les plus attendus de l'année à ne pas manquer</p>
+                            <p class="font-bold text-xs md:text-base xl:text-lg">Révélation de l'Univers de Blade Runner 2049 : Une Odyssée Cinématographique</p>
                             <div class="und-content flex gap-5">
-                                <p>Emily Devereux</p>
-                                <p>20 mars 2020</p>
+                                <p class="text-xs md:text-base xl:text-lg">Julien Lefebvre</p>
+                                <p class="text-xs md:text-base xl:text-lg"> Date: 20 mai 2021</p>
                             </div>
                             <div class="stats flex gap-2 items-center">
-                                <p>320</p>
+                                <p class="text-xs md:text-base xl:text-lg">210</p>
                                 <img class="icon w-4 h-4" src="./content/icons/comment.webp" alt="icone de commentaire">
                             </div>
                         </div>
                         <img class="w-20 h-20" src="./content/img/charles-chaplin-3521070_1280.jpg" alt="image de couverture de l'article">
                     </div>
-                    <div class="article flex p-5 justify-between gap-10">
-                        <!-- bg-[#BED7DC] -->
-                        <div class="content flex flex-col">
-                            <p class="font-bold">Révélation de l'Univers de Blade Runner 2049 : Une Odyssée Cinématographique</p>
+                    <div class="article flex bg-[#BED7DC] mt-5 p-5 justify-between gap-10">
+                        <div class="content flex flex-col gap-2">
+                            <p class="font-bold text-xs md:text-base xl:text-lg">Révélation de l'Univers de Blade Runner 2049 : Une Odyssée Cinématographique</p>
                             <div class="und-content flex gap-5">
-                                <p>Julien Lefebvre</p>
-                                <p> Date: 20 mai 2021</p>
+                                <p class="text-xs md:text-base xl:text-lg">Julien Lefebvre</p>
+                                <p class="text-xs md:text-base xl:text-lg"> Date: 20 mai 2021</p>
                             </div>
                             <div class="stats flex gap-2 items-center">
-                                <p>210</p>
+                                <p class="text-xs md:text-base xl:text-lg">210</p>
                                 <img class="icon w-4 h-4" src="./content/icons/comment.webp" alt="icone de commentaire">
                             </div>
                         </div>
                         <img class="w-20 h-20" src="./content/img/charles-chaplin-3521070_1280.jpg" alt="image de couverture de l'article">
                     </div>
-                    <div class="article flex p-5 justify-between gap-10">
-                        <div class="content flex flex-col">
-                            <p class="font-bold">2001, l'Odyssée de l'Espace : Une Réflexion sur l'Humanité à Travers les Étoiles</p>
+                    <div class="article flex bg-[#BED7DC] mt-5 p-5 justify-between gap-10">
+                        <div class="content flex flex-col gap-2">
+                            <p class="font-bold text-xs md:text-base xl:text-lg">2001, l'Odyssée de l'Espace : Une Réflexion sur l'Humanité à Travers les Étoiles</p>
                             <div class="und-content flex gap-5">
-                                <p>Julien Lefebvre</p>
-                                <p>10 novembre 2023</p>
+                                <p class="text-xs md:text-base xl:text-lg">Julien Lefebvre</p>
+                                <p class="text-xs md:text-base xl:text-lg">10 novembre 2023</p>
                             </div>
                             <div class="stats flex gap-2 items-center">
-                                <p>53</p>
+                                <p class="text-xs md:text-base xl:text-lg">53</p>
                                 <img class="icon w-4 h-4" src="./content/icons/comment.webp" alt="icone de commentaire">
                             </div>
                         </div>
                         <img class="w-20 h-20" src="./content/img/joel-filipe-QwoNAhbmLLo-unsplash.jpg" alt="image de couverture de l'article">
                     </div>
                 </div>
-                <div class="side-content bg-[#B3C8CF] p-5 w-1/3">
-                </div>              
-            </div>
-        </section>
-        <!-- Disposition similaire avec utilisation du grid. -->
-        <section class="top-articles flex flex-col w-full gap-2">
-            <h2 class="font-bold text-base sm:text-lg md:text-xl lg:text-2xl">Les plus aimés</h2>
-            <div class="content grid grid-cols-3 gap-10">
-                <div class="articles col-span-2 gap-5">
-                    <div class="article flex p-5 justify-between gap-10 bg-white">
-                        <div class="content flex flex-col">
-                            <p class="font-bold">Les 10 films les plus attendus de l'année à ne pas manquer</p>
-                            <div class="und-content flex gap-5">
-                                <p>Emily Devereux</p>
-                                <p>20 mars 2020</p>
-                            </div>
-                            <div class="stats flex gap-2 items-center">
-                                <p>320</p>
-                                <img class="icon w-4 h-4" src="./content/icons/comment.webp" alt="icone de commentaire">
-                            </div>
-                        </div>
-                        <img class="w-20 h-20" src="./content/img/charles-chaplin-3521070_1280.jpg" alt="image de couverture de l'article">
-                    </div>
-                    <div class="article flex p-5 justify-between gap-10 bg-white">
-                        <div class="content flex flex-col">
-                            <p class="font-bold">Révélation de l'Univers de Blade Runner 2049 : Une Odyssée Cinématographique</p>
-                            <div class="und-content flex gap-5">
-                                <p>Julien Lefebvre</p>
-                                <p> Date: 20 mai 2021</p>
-                            </div>
-                            <div class="stats flex gap-2 items-center">
-                                <p>210</p>
-                                <img class="icon w-4 h-4" src="./content/icons/comment.webp" alt="icone de commentaire">
-                            </div>
-                        </div>
-                        <img class="w-20 h-20" src="./content/img/charles-chaplin-3521070_1280.jpg" alt="image de couverture de l'article">
-                    </div>
-                    <div class="article flex p-5 justify-between gap-10 bg-white">
-                        <div class="content flex flex-col">
-                            <p class="font-bold">2001, l'Odyssée de l'Espace : Une Réflexion sur l'Humanité à Travers les Étoiles</p>
-                            <div class="und-content flex gap-5">
-                                <p>Julien Lefebvre</p>
-                                <p>10 novembre 2023</p>
-                            </div>
-                            <div class="stats flex gap-2 items-center">
-                                <p>53</p>
-                                <img class="icon w-4 h-4" src="./content/icons/comment.webp" alt="icone de commentaire">
-                            </div>
-                        </div>
-                        <img class="w-20 h-20" src="./content/img/joel-filipe-QwoNAhbmLLo-unsplash.jpg" alt="image de couverture de l'article">
-                    </div>
-                </div>
-                <div class="side-content bg-gray-300 p-5">
-                </div>              
+                
             </div>
         </section>
     </main>
@@ -235,7 +194,7 @@
     <footer class="flex flex-col bg-[#B3C8CF] p-10 text-white w-full gap-5">
         <div class="infos flex flex-col items-center gap-10 justify-between md:flex-row">
             <p class="logo font-bold">Silver Screen</p>
-            <div class="navigation flex flex-row justify-between gap-10">
+            <div class="navigation flex flex-row justify-between gap-10 items-center">
                 <ul>
                     <li><a href="#">A propos</a></li>
                     <li><a href="./pages/all_content/contact.html">Contact</a></li>
@@ -255,14 +214,7 @@
         </div>
         <p>© 2024 Silverscreen</p>
     </footer>
-    
+
+    <script src="./main.js"></script>
   </body>
 </html>
-
-<!-- sm	640px	@media (min-width: 640px) { ... }
-md	768px	@media (min-width: 768px) { ... }
-lg	1024px	@media (min-width: 1024px) { ... }
-xl	1280px	@media (min-width: 1280px) { ... }
-2xl	1536px	@media (min-width: 1536px) { ... } -->
-
-<!-- <img class="w-16 md:w-32 lg:w-48" src="..."> -->

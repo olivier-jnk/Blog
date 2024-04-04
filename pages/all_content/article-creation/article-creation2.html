@@ -19,15 +19,26 @@
                 <h2 class="text-2xl font-semibold mb-2">Créer un article</h2>
                 <form action="#" method="POST">
                     <div class="mb-4">
-                        <label for="name" class="block text-gray-700 font-medium">Titre</label>
+                        <label for="name" class="block text-gray-700 font-medium">Miniature</label>
+                        <input type="file" id="fileUpload" name="fileUpload">
+                    </div>
+                    <div class="mb-4">
+                        <label for="name" class="block text-gray-700 font-medium">Ajouter des tags</label>
                         <input type="text" id="name" name="name" class="mt-1 px-4 py-2 w-full border-b border-gray-300 focus:outline-none focus:border-blue-500" required>
                     </div>
-                    <div class="mb-6">
-                        <label for="message" class="block text-gray-700 font-medium">Description</label>
-                        <textarea id="message" name="message" rows="5" class="mt-1 px-4 py-2 w-full border rounded-md border-gray-300 focus:outline-none focus:border-blue-500" required></textarea>
+                    <div class="mb-6 flex gap-2">
+                        <label>
+                            <input type="radio" name="etat" value="public">
+                            Public
+                        </label>
+                        <br>
+                        <label>
+                            <input type="radio" name="etat" value="brouillon">
+                            Brouillon
+                        </label>
                     </div>
                     <div class="flex justify-end">
-                        <a class="bg-[#BED7DC] text-white px-4 py-2 rounded-md hover:hover:bg-[#B3C8CF]" href="./article-creation2.html">Suivant</a>
+                        <a class="bg-[#BED7DC] text-white px-4 py-2 rounded-md hover:hover:bg-[#B3C8CF]" href="./article-creation2.html">Terminer</a>
                     </div>
                 </form>
             </div>

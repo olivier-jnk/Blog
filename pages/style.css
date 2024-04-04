@@ -1,3 +1,11 @@
+@font-face {
+  font-family: "Poppins";
+  src: url("../content/fonts/Poppins-Regular.ttf") format("ttf");
+}
+p {
+  font-family: "Poppins";
+}
+
 .line {
   width: 100%;
   height: 1px;
@@ -24,4 +32,36 @@
 
 .has-submenu:hover .submenu {
   display: block;
+}
+
+/* .custom-background {
+  background-image: url("../content/img/charles-chaplin-3521070_1280.jpg");
+  background-size: cover;
+  background-position: center;
+} */
+
+.underline-animation {
+  position: relative;
+  display: inline-block;
+}
+
+.underline-animation::before {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background-color: white;
+  bottom: 0;
+  left: 0;
+  transition: width 0.3s ease;
+}
+
+.underline-animation:hover::before {
+  width: 100%;
+}
+
+@media screen and (max-width: 900px) {
+  header ul {
+    display: none;
+  }
 }/*# sourceMappingURL=style.css.map */
